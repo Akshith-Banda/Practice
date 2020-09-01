@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo</title>
+    <link rel="stylesheet" href="{% static 'todo/bs/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'todo/todo_style.css' %}">
+</head>
+<body>
+
+    <h1 class="display-6 header">
+        Welcome to ToDo App
+    </h1>
+
+    <div class="container" id="wrapper">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3" id="content">
+
+                <div id="date">
+                    <small>{{ date_today|date }}.</small>
+                </div>
+
+                <form id="form_action" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="input-group" id="inputText">
+                            {{ todo_form.text }}
+                            <span class="input-group-btn">
+                                <button type="submit" id="formBtn" class="btn btn-primary">Edit</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="btn-toolbar">
+                    <div class="btn-group">
+                        <a href="{% url 'deletecomplete' %}">
+                            <button type="button" class="btn btn-warning">Delete completed</button>
+                        </a>
+                    </div>
+                    <div class="btn-group pl-2">
+                        <a href="{% url 'deleteall' %}">
+                            <button type="button" class="btn btn-warning">Delete all</button>
+                        </a>
+                    </div>
+                    <div class="btn-group pl-5">
+                        <a id="completeLink">
+                            <button type="button" class="btn btn-info" id="completeBtn" disabled>Completed</button>
+                        </a>
+                    </div>
+                    <div class="btn-group pl-2">
+                        <a id="updateLink">
+                            <button type="button" class="btn btn-info" id="updateBtn" disabled>Update</button>
+                        </a>
+                    </div>
+                </div>
+                
+                {% for todo in todo_list %}
+                    <ul class="list-group ">
+                        {% if todo.completed %}
+                            <li class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
+                                {{ todo.text }}
+                                <span class="badge badge-pill badge-success">completed</span>
+                            </li>
+                        {% else %}
+                            <a href="#" class="link-list" data-id="{{todo.id}}" data-text="{{todo.text}}">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    {{ todo.text }}
+                                    <span class="badge badge-pill badge-secondary">
+                                        {% if todo.date_created|date == date_today|date %}
+                                            today
+                                        {% elif todo.date_created|timesince < '0 days, 24 hours' %}
+                                            yesterday
+                                            <!-- {{ todo.date_created|timesince }} -->
+                                        {% else %}
+                                            {{ todo.date_created|timesince }} ago
+                                        {% endif %}
+                                    </span>
+                                </li>
+                            </a>
+                            
+                        {% endif %}
+                    </ul>
+                {% endfor %}
+                
+
+            </div>
+        </div>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12 text-center t5">
+                    Copyright &copy; 2020 <strong>ToDo App</strong>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!--<script src="{% static 'todo/main.js' %}"></script>-->
+</body>
+</html>

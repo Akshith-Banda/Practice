@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'todo/bs/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'todo/todo_style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4">
+                <div class="card border-dark">
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Login</h5>
+                        <form action="{% url 'login' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <input type="text" name="username" placeholder="Username..." class="form-control">
+                            </div>
+                            <div class="mb-2">
+                                <input type="password" name="password" placeholder="Password..." class="form-control" >
+                            </div>
+                            <div class="mb-2">
+                                <button type="submit" class="btn btn-success block">Login</button>
+                            </div>
+                        </form>
+                        Don't have an account? <a href="{% url 'register' %}" style="color: blue;">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</body>
+</html>

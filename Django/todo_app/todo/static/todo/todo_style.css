@@ -1,0 +1,73 @@
+body{
+background:#e6e6e6;
+}
+
+#wrapper{
+margin-top : 7%;
+}
+
+#content{
+background : #e4e49b;
+padding : 25px;
+}
+
+.list-item li{
+font-size : 17px;
+padding-bottom : 5px;
+}
+
+a{
+text-decoration : none;
+list-style : none;
+color : #000;
+}
+
+a:hover{
+color : #009933;
+text-decoration : none;
+}
+
+.form-group{
+padding-top : 10px;
+}
+
+#date{
+text-align : center;
+font-weight : 800;
+font-size : 17px;
+color : black;
+}
+
+.btn-toolbar{
+padding-bottom : 12px;
+}
+
+.del-all{
+padding-left : 10px;
+}
+
+.list-group-item{
+list-style : none;
+}
+
+.todo-completed{
+text-decoration: line-through;
+}
+
+.header{
+background : #003366;
+color : white;
+padding-bottom : 5px;
+padding-left : 5px;
+margin : auto;
+}
+
+.t5{
+padding-top : 10px;
+}
+
+
+
+
+
+
