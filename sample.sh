@@ -31,4 +31,4 @@ az aks create --resource-group $resourcegroup \
 #Get cluster access to the local cloud shell
 az aks get-credentials --resource-group $resourcegroup  --name $uniqueaksclustername
 
-echo 'Bye, World!'
+echo 'Bye, World!' 
