@@ -7,8 +7,8 @@ export appId="d5dd7f63-6f76-481b-adc2-d82b1606cef8"
 export clientsecret="rLR8Q~byY~OyPORZONEm11suTTSk9DmbvO7FMa._"
 export tenant="97f998a5-f0f3-4588-8ba3-f956f2f2dcd6"
 
-export region="eastus2"
-export resourcegroup="akshith-test-1"
+export region="westus3"
+export resourcegroup="akshith-test-2"
 export uniqueaksclustername="cape-cluster-$resourcegroup"
 
 az login --service-principal -u $appid -p $clientsecret --tenant $tenant
