@@ -16,7 +16,7 @@ az login --service-principal -u $appid -p $clientsecret --tenant $tenant
 
 #Create Azrue resource group for our test setup.
 
-az group create --name $resourcegroup --location $region
+#az group create --name $resourcegroup --location $region
 
 #Creating the actual AKS Cluster 
 
