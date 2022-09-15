@@ -29,6 +29,6 @@ az aks create --resource-group $resourcegroup \
     --node-vm-size Standard_D2_v2
 
 #Get cluster access to the local cloud shell
-az aks get-credentials --resource-group $resourcegroup  --name $uniqueaksclustername
+az aks get-credentials --resource-group $resourcegroup  --name $uniqueaksclustername --file /tmp/$uniqueaksclustername-kubeconfig
 
 echo 'Bye, World!' 
