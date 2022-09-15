@@ -8,7 +8,7 @@ export clientsecret="rLR8Q~byY~OyPORZONEm11suTTSk9DmbvO7FMa._"
 export tenant="97f998a5-f0f3-4588-8ba3-f956f2f2dcd6"
 
 export region="eastus2"
-export resourcegroup="akshith-test"
+export resourcegroup="akshith-test-1"
 export uniqueaksclustername="cape-cluster-$resourcegroup"
 
 az login --service-principal -u $appid -p $clientsecret --tenant $tenant
@@ -16,7 +16,7 @@ az login --service-principal -u $appid -p $clientsecret --tenant $tenant
 
 #Create Azrue resource group for our test setup.
 
-#az group create --name $resourcegroup --location $region
+az group create --name $resourcegroup --location $region
 
 #Creating the actual AKS Cluster 
 
