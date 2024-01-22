@@ -60,7 +60,7 @@ func printList(l *List) {
 	}
 }
 
-func main() {
+func linklist() {
 	list := new(List)
 	list.add(1)
 	list.add(2)
