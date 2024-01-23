@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func loops() {
 
 	coursesInProg := []string{"docker", "Go", "kubernetes"}
 	coursesCompleted := []string{"Go", "python", "kube"}
