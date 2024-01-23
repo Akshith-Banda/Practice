@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func fibanacciMain() {
 	fibanacci(10)
 	recursionFib(10)
 	fmt.Println("*************RECFIBANACCI***********")
